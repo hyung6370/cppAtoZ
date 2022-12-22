@@ -17,6 +17,6 @@ int main(int argc, char* argv[]) {
         cout << "Yes" << endl;
     }
     else cout << "No" << endl;
-
+  
     return 0; 
 }
