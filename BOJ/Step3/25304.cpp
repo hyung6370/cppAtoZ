@@ -18,5 +18,5 @@ int main(int argc, char* argv[]) {
     }
     else cout << "No" << endl;
 
-    return 0;
+    return 0; 
 }
