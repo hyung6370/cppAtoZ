@@ -10,3 +10,4 @@ int main() {
         cout << word.substr(i, 1) << " ";
     }
 }
+
