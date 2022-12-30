@@ -1,12 +1,10 @@
 #include <iostream>
 using namespace std;
 
-int fac(int num) {
-    int result = 1;
-    for (int i = 1; i <= num; i++) {
-        result = result * i;
-    }
-    return result;
+int fi(int num) {
+    if (num == 0) return 0;
+    else if (num == 1) return 1;
+    else return fi(num-2) + fi(num-1);
 }
 
 int main(int argc, char* argv[]) {
@@ -17,7 +15,7 @@ int main(int argc, char* argv[]) {
     int num;
     cin >> num;
 
-    cout << fac(num);
+    cout << fi(num);
 
     return 0;
 }
