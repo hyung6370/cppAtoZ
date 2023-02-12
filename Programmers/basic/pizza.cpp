@@ -5,15 +5,15 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    int n;
+    int slice, n;
     int result = 0;
-    cin >> n;
+    cin >> slice >> n;
 
-    if (n % 7 == 0) {
-        result = n / 7;
+    if (n % slice == 0) {
+        result = n / slice;
     }
-    else{
-        result = n / 7;
+    else {
+        result = n / slice + 1;
     }
 
     cout << result;
