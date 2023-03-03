@@ -6,6 +6,7 @@ using namespace std;
 
 string toBinary(int num) {
     string result = "";
+    if (!num) return "0";
     while (num > 0) {
         if (num % 2 == 1) result = "1" + result;
         else result = "0" + result;
@@ -16,6 +17,8 @@ string toBinary(int num) {
 
 int binaryNumAddResult(string bin) {
     int value = 0;
+    int check = stoi(bin);
+    if (check == 0) return 0;
 
     for (int i = 0; i < bin.size(); i++) {
         if (bin[i] == '1') {
@@ -43,6 +46,7 @@ int main() {
 
     string bin1, bin2;
     cin >> bin1 >> bin2;
+    
 
     cout << solution(bin1, bin2);
 
