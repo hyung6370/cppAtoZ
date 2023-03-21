@@ -1,29 +1,27 @@
 #include <iostream>
-#include <string>
-#include <vector>
+#include <sstream>
 using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    vector<string> array;
-    vector<string>::iterator it;
-    int n, value;
-    int count = 0;
+    // int num;
+    // string str = "4 + 2";
+    // stringstream stream;
+    // stream.str(str); // 초기화 -> stream에 str을 대입
 
-    cin >> n;
-    for (int i = 0; i < n; i++) {
-        cin >> value;
-        array.push_back(to_string(value));
+    // while(stream >> num) {
+    //     cout << num << '\n';
+    // }
+
+    string s;
+    string str = "4 + 21";
+    stringstream stream(str);  // 초기화 -> stream에 str을 대입
+
+    while(stream >> s) {
+        cout << s << '\n';
     }
-
-    for (int i = 0; i < array.size(); i++) {
-        it = find(array.begin(), array.end(), '7');
-        if (it == array.end()) count++;
-    }
-
-    // cout << solution(array);
 
     return 0;
 }

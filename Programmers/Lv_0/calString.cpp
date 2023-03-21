@@ -1,26 +1,41 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 using namespace std;
 
 int solution(string my_string) {
     int answer = 0;
-    int n = 0, idx = 0;
-    char c;
+    
+    vector<string> v;
+    string value;
+    string op;
+    stringstream stream(my_string);
 
-    for (int i = 0; i < my_string.size(); i++) {
-        if (my_string[i] >= '0' && my_string[i] <= '9') {
-            n = n*10 + my_string[i] - '0';
+    while(stream >> value) {
+        try {
+            if (stoi(value) >= 0 && stoi(value) <= 20000) v.push_back(value);
         }
-        else {
-            idx = i;
-            answer += n;
-            n = 0;
-            break;
+        catch(...) {
+            if (value == "\"") continue;
+            else op = value;
         }
     }
 
-    
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+
+    // if (op == "+") {
+    //     for (int i = 0; i < v.size(); i++) {
+    //         answer += stoi(v[i]);
+    //     }
+    // }
+    // else if (op == "-") {
+    //     for (int i = 0; i < v.size(); i++) {
+    //         answer -= stoi(v[i]);
+    //     }
+    // }
 
     return answer;
 }
