@@ -7,35 +7,16 @@ using namespace std;
 int solution(string my_string) {
     int answer = 0;
     
-    vector<string> v;
-    string value;
-    string op;
-    stringstream stream(my_string);
+    stringstream ss(my_string);
+    ss >> answer;
 
-    while(stream >> value) {
-        try {
-            if (stoi(value) >= 0 && stoi(value) <= 20000) v.push_back(value);
-        }
-        catch(...) {
-            if (value == "\"") continue;
-            else op = value;
-        }
+    int n;
+    char c;
+    
+    while (ss >> c >> n) {
+        if (c == '+') answer += n;
+        else answer -= n;
     }
-
-    for (int i = 0; i < v.size(); i++) {
-        cout << v[i] << " ";
-    }
-
-    // if (op == "+") {
-    //     for (int i = 0; i < v.size(); i++) {
-    //         answer += stoi(v[i]);
-    //     }
-    // }
-    // else if (op == "-") {
-    //     for (int i = 0; i < v.size(); i++) {
-    //         answer -= stoi(v[i]);
-    //     }
-    // }
 
     return answer;
 }
