@@ -1,12 +1,17 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 int main() {
-    string s = "2112";
+    string s;
     int n;
+    
+    cin >> n >> s;
+    vector<string> v;
 
-    n = stoi(s);
+   
 
-    cout << n-3;
+    return 0;
+    
 }
