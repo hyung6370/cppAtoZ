@@ -5,15 +5,16 @@ using namespace std;
 
 int solution(int chicken) {
     int answer = -1;
-    int temp = chicken;
-    int coupon = 0;
-    while (temp > 0) {
-        temp = temp / 10;
-        coupon++;
+    
+    int coupon = chicken;
+    int service = 0;
+    
+    while (coupon >= 10) {
+        service += coupon / 10;
+        coupon = coupon / 10 + coupon % 10;
     }
-    cout << coupon << '\n';
-    answer = chicken / 10;
-
+    answer = service;
+    
     return answer;
 }
 
