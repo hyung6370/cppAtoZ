@@ -14,9 +14,9 @@ vector<int> solution(vector<vector<int>> score) {
     int ranking = 1;
 
     for (int i = 0; i < score.size(); i++) {
-        avg = (score[i][0] + score[i][1]) / 2;
-        v.push_back(avg);
-        v_cpy.push_back(avg);
+        // avg = (score[i][0] + score[i][1]) / 2;
+        v.push_back(score[i][0] + score[i][1]);
+        v_cpy.push_back(score[i][0] + score[i][1]);
     }
 
     sort(v_cpy.begin(), v_cpy.end(), greater<>());
