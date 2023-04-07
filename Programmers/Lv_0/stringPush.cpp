@@ -26,6 +26,8 @@ int solution2(string A, string B) {
 }
 */
 
+// rotate 함수
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
