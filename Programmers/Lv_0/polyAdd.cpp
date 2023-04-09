@@ -5,6 +5,7 @@ using namespace std;
 
 string solution(string polynomial) {
     string answer = "";
+    string subValue = "";
     int pre = 0, cur = 0, xValue = 0, value = 0;
     vector<string> x;
     x.clear();
@@ -20,28 +21,24 @@ string solution(string polynomial) {
 
     for (int i = 0; i < x.size(); i++) {
         if (x[i] == "+") continue;
-        if (x[i] == "x") xValue += 1;
-        if (x[i].find('x') == true) {
-            cout << x[i].find('x') << '\n';
-            xValue += (x[i][0] - '0');
+        if (x[i] == "x") {
+            xValue += 1;
+            continue;
         }
+        if (find(x[i].begin(), x[i].end(), 'x') != x[i].end()) {
+            for (int j = 0; j < find(x[i].begin(), x[i].end(), 'x') - x[i].begin(); j++) {
+                subValue += x[i][j];
+            }
+            xValue += stoi(subValue);
+            subValue = "";
+        }
+
         if (x[i].size() == 1 && x[i] >= "0" && x[i] <= "9") {
             value += stoi(x[i]);
         }
     }
-    if (value == 0) {
-        answer = to_string(xValue) + "x";
-    }
-    else {
-        answer = to_string(xValue) + "x + " + to_string(value);
-    }
-    // cout << xValue << "x + " << value;
-
-    // for (int i = 0; i < x.size(); i++) {
-    //     cout << x[i] << '\n';
-    // }
-    // cout << '\n';
-    // cout << x[0][0];
+    if (value == 0) answer = to_string(xValue) + "x";
+    else answer = to_string(xValue) + "x + " + to_string(value);
 
     return answer;
 }
