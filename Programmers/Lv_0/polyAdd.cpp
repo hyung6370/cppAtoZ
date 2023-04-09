@@ -35,9 +35,11 @@ string solution(string polynomial) {
 
         if (x[i].size() == 1 && x[i] >= "0" && x[i] <= "9") {
             value += stoi(x[i]);
+            // value를 일의 자리 수 밖에 생각을 못했다. 십의자리, 백의자리 수도 구현이 필요하다
         }
     }
     if (value == 0) answer = to_string(xValue) + "x";
+    else if (xValue == 0) answer = to_string(value);
     else answer = to_string(xValue) + "x + " + to_string(value);
 
     return answer;
