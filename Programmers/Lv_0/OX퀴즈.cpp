@@ -22,12 +22,16 @@ vector<string> solution(vector<string> quiz) {
         x.push_back(quiz[i].substr(pre, cur-pre));
 
         if (x[1] == "+") {
-            
+            result = stoi(x[0]) + stoi(x[2]);
+            if (result == stoi(x[4])) answer.push_back("O");
+            else answer.push_back("X");
         }
-
+        else if (x[1] == "-") {
+            result = stoi(x[0]) - stoi(x[2]);
+            if (result == stoi(x[4])) answer.push_back("O");
+            else answer.push_back("X");
+        }
     }
-
-    
 
     return answer;
 }
@@ -51,9 +55,9 @@ int main() {
 
     result = solution(quiz);
 
-    // for (int i = 0; i < result.size(); i++) {
-    //     cout << result[i] << " ";
-    // }
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << " ";
+    }
 
     return 0;
 }
