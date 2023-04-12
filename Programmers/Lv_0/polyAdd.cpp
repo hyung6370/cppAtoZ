@@ -19,6 +19,7 @@ string solution(string polynomial) {
     }
     x.push_back(polynomial.substr(pre, cur-pre));
 
+
     for (int i = 0; i < x.size(); i++) {
         if (x[i] == "+") continue;
         if (x[i] == "x") {
