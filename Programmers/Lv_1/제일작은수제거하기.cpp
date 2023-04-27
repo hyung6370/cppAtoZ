@@ -22,6 +22,17 @@ vector<int> solution(vector<int> arr) {
     return answer;
 }
 
+vector<int> solution2(vector<int> arr) {
+    vector<int> answer = arr;
+
+    int nMin = *min_element(arr.begin(), arr.end());
+    int pos = find(answer.begin(), answer.end(), nMin) - answer.begin();
+    answer.erase(answer.begin() + pos);
+
+    return answer.empty() ? vector<int>(1, -1) : answer;
+}
+
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
