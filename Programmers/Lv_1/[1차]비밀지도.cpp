@@ -54,6 +54,7 @@ vector<string> best_solution(int n, vector<int> arr1, vector<int> arr2) {
         }
         answer.push_back(ans);
     }
+    return answer;
 }
 
 
@@ -74,7 +75,7 @@ int main() {
         arr2.push_back(data);
     }
 
-    result = solution(n, arr1, arr2);
+    result = best_solution(n, arr1, arr2);
 
     for (int i = 0; i < result.size(); i++) {
         cout << result[i] << '\n';
