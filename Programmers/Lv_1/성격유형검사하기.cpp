@@ -15,6 +15,10 @@ string best_solution(vector<string> survey, vector<int> choices) {
         m[survey[i][choices[i]/4]] += score[choices[i]];
     }
 
+    for (auto i : m) {
+        cout << i.first << ": " << i.second << '\n';
+    }
+
     answer += m['R'] >= m['T'] ? "R" : "T";
     answer += m['C'] >= m['F'] ? "C" : "F";
     answer += m['J'] >= m['M'] ? "J" : "M";
