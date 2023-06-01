@@ -1,13 +1,15 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <map>
 using namespace std;
 
 int solution(vector<int> Ais, int N, int K) {
-    int answer;
+    int answer = 0;
 
-    
+    for (int i = N-1; i >= 0; i--) {
+        answer += (K / Ais[i]);
+        K %= Ais[i];
+        cout << "K: " << K << '\n';
+    }
 
     return answer;
 }
