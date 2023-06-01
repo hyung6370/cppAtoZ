@@ -3,18 +3,24 @@
 #include <vector>
 using namespace std;
 
-int solution(int N, vector<vector<int>> road, int K) {
-    int answer = 0;
-    vector<int> v;
-    
-    for (int i = 0; i < N+1; i++) {
-        if (road[i][0] == 1 && road[i][2] < K+1) {
-            
-            answer++;
-            
-            if (road[road[i][1]][2] + road[i][2] < K+1) answer++;
-            
-        }
+long long factorial[21] = {1, };
+
+vector<int> solution(int n, long long k) {
+    vector<int> answer, v;
+
+    for (int i = 1; i <= n; i++) {
+        factorial[i] = factorial[i-1] * i;
+        v.push_back(i);
+    }
+
+    k--;
+    while (n > 0) {
+        cout << n << " " << k << '\n';
+        int firstIndex = k / factorial[n-1];
+        answer.push_back(v[firstIndex]);
+        v.erase(v.begin() + firstIndex);
+        k %= factorial[n-1];
+        n--;
     }
 
     return answer;
@@ -24,23 +30,16 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    int N, K, data;
-    vector<int> v;
-    vector<vector<int>> road;
-    cin >> N;
+    int n;
+    long long k;
+    vector<int> result;
 
-    for (int i = 0; i < N+1; i++) {
-        for (int j = 0; j < 3; j++) {
-            cin >> data;
-            v.push_back(data);
-        }
-        road.push_back(v);
-        v.clear();
+    cin >> n >> k;
+    result = solution(n, k);
+
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << " ";
     }
-
-    cin >> K;
-
-    cout << solution(N, road, K);
 
 
     return 0;
