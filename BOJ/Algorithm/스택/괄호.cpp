@@ -28,7 +28,7 @@ int main(void) {
 		}
 		if (!st.empty()) answer = "NO";
 
-		cout << answer << endl;
+		cout << answer << '\n';
 	}
 	return 0;
 }
