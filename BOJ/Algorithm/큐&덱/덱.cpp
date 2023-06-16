@@ -1,0 +1,58 @@
+#include <iostream>
+#include <deque>
+using namespace std;
+
+int main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+
+  int N, x;
+  string cmd;
+  deque<int> dq;
+  cin >> N;
+
+  for (int i = 0; i < N; i++) {
+    cin >> cmd;
+    if (cmd == "push_front") {
+      cin >> x;
+      dq.push_front(x);
+    }
+    if (cmd == "push_back") {
+      cin >> x;
+      dq.push_back(x);
+    }
+    if (cmd == "pop_front") {
+      if (!dq.empty()) {
+        cout << dq.front() << '\n';
+        dq.pop_front();
+      }
+      else cout << -1 << '\n';
+    }
+    if (cmd == "pop_back") {
+      if (!dq.empty()) {
+        cout << dq.back() << '\n';
+        dq.pop_back();
+      }
+      else cout << -1 << '\n';
+    }
+    if (cmd == "size") {
+      cout << dq.size() << '\n';
+    }
+    if (cmd == "empty") {
+      if (dq.empty()) cout << 1 << '\n';
+      else cout << 0 << '\n';
+    }
+    if (cmd == "front") {
+      if (!dq.empty()) {
+        cout << dq.front() << '\n';
+      }
+      else cout << -1 << '\n';
+    }
+    if (cmd == "back") {
+      if (!dq.empty()) {
+        cout << dq.back() << '\n';
+      }
+      else cout << -1 << '\n';
+    }
+  }
+}
