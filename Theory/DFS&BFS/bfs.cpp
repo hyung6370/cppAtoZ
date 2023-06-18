@@ -1,16 +1,28 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 using namespace std;
 
 bool visited[9];
 vector<int> graph[9];
 
-void dfs(int x) {
-  visited[x] = true;
-  cout << x << " ";
-  for (int i = 0; i < graph[x].size(); i++) {
-    int y = graph[x][i];
-    if (!visited[y]) dfs(y);
+void bfs(int start) {
+  queue<int> q;
+  q.push(start); // 첫 노드 큐에 삽입
+  visited[start] = true; // 첫 노드 방문 처리
+
+  while (!q.empty()) {
+    int x = q.front();
+    q.pop();
+    cout << x << " ";
+
+    for (int i = 0; i < graph[x].size(); i++) {
+      int y = graph[x][i];
+      if (!visited[y]) {
+        q.push(y);
+        visited[y] = true;
+      }
+    }
   }
 }
 
@@ -43,6 +55,6 @@ int main() {
 
   graph[8].push_back(1);
   graph[8].push_back(7);
-  
-  dfs(1);
+
+  bfs(1);
 }
