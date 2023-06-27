@@ -2,9 +2,20 @@
 #include <vector>
 using namespace std;
 
-int solution(vector<int> numbers, int target) {
-  int answer = 0;
+int answer = 0;
 
+void dfs(vector<int> numbers, int target, int sum, int index) {
+  if (index == numbers.size()) {
+    if (sum == target) answer++;
+    return;
+  }
+  dfs(numbers, target, sum+numbers[index], index+1);
+  dfs(numbers, target, sum-numbers[index], index+1);
+}
+
+
+int solution(vector<int> numbers, int target) {  
+  dfs(numbers, target, 0, 0);
   return answer;
 }
 
@@ -12,11 +23,12 @@ int main() {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
 
-  int n, target;
+  int n, data, target;
   vector<int> numbers;
   cin >> n;
   for (int i = 0; i < n; i++) {
-    cin >> numbers[i];
+    cin >> data;
+    numbers.push_back(data);
   }
   cin >> target;
 
