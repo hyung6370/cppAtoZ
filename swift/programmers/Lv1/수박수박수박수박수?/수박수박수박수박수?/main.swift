@@ -7,5 +7,16 @@
 
 import Foundation
 
-print("Hello, World!")
+func solution(_ n: Int) -> String {
+    return (0..<n).map { ($0 % 2 == 0 ? "수" : "박") }.reduce("", +)
+}
 
+func solution2(_ n: Int) -> String {
+    var str = ""
+    
+    for i in 1...n {
+        str += i % 2 == 1 ? "수" : "박"
+    }
+    
+    return str
+}
