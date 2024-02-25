@@ -16,3 +16,4 @@ for newS, newE in arr:
         res += 1
         endPoint = newE
 print(res)
+ 
