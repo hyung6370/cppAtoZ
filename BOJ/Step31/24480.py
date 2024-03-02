@@ -8,7 +8,7 @@ visited = [0] * (N+1)
 
 c = 1
 def dfs(graph, v, visited):
-    global c
+    global c    
     visited[v] = c
     
     for i in graph[v]:
