@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BD69C4A32BC780360018B3C4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69C4A22BC780360018B3C4 /* main.swift */; };
-		BD69C4AA2BC781B80018B3C4 /* bfsDeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69C4A92BC781B80018B3C4 /* bfsDeque.swift */; };
+		BDA681A62BC7BF760066835B /* BfsDeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA681A52BC7BF760066835B /* BfsDeque.swift */; };
+		BDA681A82BC7C4EB0066835B /* BfsInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA681A72BC7C4EB0066835B /* BfsInsert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +27,8 @@
 /* Begin PBXFileReference section */
 		BD69C49F2BC780360018B3C4 /* 13549 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 13549; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD69C4A22BC780360018B3C4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		BD69C4A92BC781B80018B3C4 /* bfsDeque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bfsDeque.swift; sourceTree = "<group>"; };
+		BDA681A52BC7BF760066835B /* BfsDeque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BfsDeque.swift; sourceTree = "<group>"; };
+		BDA681A72BC7C4EB0066835B /* BfsInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BfsInsert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				BD69C4A22BC780360018B3C4 /* main.swift */,
-				BD69C4A92BC781B80018B3C4 /* bfsDeque.swift */,
+				BDA681A52BC7BF760066835B /* BfsDeque.swift */,
+				BDA681A72BC7C4EB0066835B /* BfsInsert.swift */,
 			);
 			path = 13549;
 			sourceTree = "<group>";
@@ -123,7 +126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD69C4AA2BC781B80018B3C4 /* bfsDeque.swift in Sources */,
+				BDA681A82BC7C4EB0066835B /* BfsInsert.swift in Sources */,
+				BDA681A62BC7BF760066835B /* BfsDeque.swift in Sources */,
 				BD69C4A32BC780360018B3C4 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
