@@ -5,7 +5,7 @@
 //  Created by KIM Hyung Jun on 8/7/24.
 //
 
-// [Greedy Algorithm], 1992 쿼드트리
+// [Greedy Algorithm], 1931 회의실 배정
 
 import Foundation
 
